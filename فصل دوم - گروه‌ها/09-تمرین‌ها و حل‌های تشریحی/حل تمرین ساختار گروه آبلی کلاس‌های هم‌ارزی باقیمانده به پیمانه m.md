@@ -1,49 +1,118 @@
 ---
-uid: MK-02SG197
-kind: solution
-subtype: rigorous_full
-slug: solution-modular-integers-additive-abelian-group-structure
-status: seed
-schema_version: 1.1.0
-title_fa: حل تمرین ساختار گروه آبلی کلاس‌های هم‌ارزی باقیمانده به پیمانه m
-title_en: Solution Modular Integers Additive Abelian Group Structure
-slogan_fa: 'حل تشریحی تمرین ۱۶ ص ۴۰: اثبات خوش‌تعریفی جمع رده‌ها $\bar{r}_1 + \bar{r}_2
-  = \overline{r_1+r_2}$، شرکت‌پذیری، عضو خنثی...'
-slogan_en: Knowledge atom for solution-modular-integers-additive-abelian-group-structure
-  in group theory.
-msc_primary: 20-01
+uid: "MK-02SG197"
+kind: "solution"
+subtype: "rigorous_full"
+slug: "solution-modular-integers-additive-abelian-group-structure"
+status: "canonical"
+schema_version: "1.1.0"
+title_fa: "حل تمرین ساختار گروه آبلی کلاس‌های هم‌ارزی باقیمانده به پیمانه m"
+title_en: "Full Solution: Abelian Group Structure of Congruence Classes Modulo m"
+aliases:
+  - "حل تمرین ۱۶ ص ۴۰ جزوه علائیان"
+slogan_fa: "حل تشریحی تمرین ۱۶ ص ۴۰: اثبات خوش‌تعریفی و بسته‌بودن جمع رده‌های هم‌ارزی به پیمانه $m$، شرکت‌پذیری، وجود عضو همانی $\\bar{0}$، عضو قرینه $-\\bar{r} = \\overline{m-r}$ و خاصیت جابجایی."
+slogan_en: "Step-by-step rigorous proof that (Z_m, +) is a well-defined abelian group."
+msc_primary: "20-01"
 tracks:
-- pure_university
-theory_scope: '[[algebraic-structures-foundations]]'
-level: L3_undergrad_core
-bloom_cognitive: apply
-bloom_knowledge: procedural
+  - "pure_university"
+theory_scope: "[[algebraic-structures-foundations]]"
+level: "L3_undergrad_core"
+bloom_cognitive: "apply"
+bloom_knowledge: "procedural"
 dok: 3
 authors:
-- علیرضا علائیان
-- process:ai-agent/1.0
-created: '2026-11-23T03:00:00Z'
-updated: '2026-11-23T03:00:00Z'
+  - "علیرضا علائیان"
+  - "process:ai-agent/1.0"
+created: "2026-11-23T03:00:00Z"
+updated: "2026-11-23T04:00:00Z"
 tags:
-- جبر_مجرد
-- نظریه_گروه‌ها
-- فصل_دوم
-- solution
+  - جبر_مجرد
+  - نظریه_گروه‌ها
+  - فصل_دوم
+  - solution
+  - حل_تمرین
+  - گروه_آبلی
 rel_solves:
-- '[[تمرین ساختار گروه آبلی کلاس‌های هم‌ارزی باقیمانده به پیمانه m]]'
+  - "[[تمرین ساختار گروه آبلی کلاس‌های هم‌ارزی باقیمانده به پیمانه m]]"
 ---
 
-# 🎯 حل تمرین ساختار گروه آبلی کلاس‌های هم‌ارزی باقیمانده به پیمانه m
+# 🗝️ حل تمرین ساختار گروه آبلی کلاس‌های هم‌ارزی باقیمانده به پیمانه m
 
-> [!abstract] ایده کلیدی حل (Key Idea)
-> حل تشریحی تمرین ۱۶ ص ۴۰: اثبات خوش‌تعریفی جمع رده‌ها $\bar{r}_1 + \bar{r}_2 = \overline{r_1+r_2}$، شرکت‌پذیری، عضو خنثی $\bar{0}$، قرینه $-\bar{r} = \overline{m-r}$ و جابجایی جمع.
+> [!abstract] ایده کشف مسیر (چطور به ذهن می‌رسد؟)
+> **روایت اکتشافی پولیا:**  
+> هنگامی که روی یک «مجموعه کلاس‌های هم‌ارزی» عملی را با تکیه بر نمایندگانشان تعریف می‌کنیم، همیشه یک خطر پنهان وجود دارد: یک کلاس هم‌ارزی بی‌نهایت نماینده دارد (مثلاً در $\mathbb{Z}_5$ داریم $\bar{2} = \bar{7} = \overline{-3}$). پس نخستین گام منطقی آن است که نشان دهیم تعریف ما به انتخاب نماینده حساس نیست (**خوش‌تعریفی**).  
+> پس از تثبیت خوش‌تعریفی، می‌توانیم به جای مقید ماندن به باقیمانده استاندارد $0 \leqslant r < m$، آزادانه بنویسیم $\bar{a} + \bar{b} = \overline{a + b}$؛ این آزادی باعث می‌شود تمام قوانین جبری جمع اعداد صحیح ($\mathbb{Z}$) از جمله شرکت‌پذیری و جابجایی بی‌واسطه به $\mathbb{Z}_m$ منتقل شوند و تنها کار باقی‌مانده شناسایی صفر ($\bar{0}$) و قرینه هر عنصر باشد.
 
-## ۱. پاسخ تشریحی و گام‌به‌گام (Step-by-Step Solution)
+---
 
-> [!PROOF] حل تشریحی
-> حل تشریحی تمرین ۱۶ ص ۴۰: اثبات خوش‌تعریفی جمع رده‌ها $\bar{r}_1 + \bar{r}_2 = \overline{r_1+r_2}$، شرکت‌پذیری، عضو خنثی $\bar{0}$، قرینه $-\bar{r} = \overline{m-r}$ و جابجایی جمع.
+## ۱. اجرای کامل و گام‌به‌گام برهان ریاضی (Rigorous Execution)
 
-## ۲. شگردهای ویژه و روش‌های جایگزین (Alternative Approaches)
+> [!PROOF] اثبات صوری و گام‌به‌گام
+> فرض می‌کنیم $m \in \mathbb{N}$ عددی طبیعی و ثابت باشد و $\mathbb{Z}_m = \{\bar{0}, \bar{1}, \dots, \overline{m-1}\}$ مجموعه رده‌های هم‌نهشتی اعداد صحیح به پیمانه $m$ باشد.
+>
+> **گام اول (خوش‌تعریفی و بسته‌بودن عمل جمع پیمانه‌ای):**  
+> ابتدا نشان می‌دهیم قاعده تعریف‌شده یک عمل دوتایی خوش‌تعریف روی $\mathbb{Z}_m$ است:
+> 1. **بسته‌بودن (وجود و یکتایی نماینده استاندارد):** به ازای هر دو عدد صحیح $r_1, r_2$، طبق الگوریتم تقسیم اقلیدسی، $r_1 + r_2 = mq + r$ که در آن باقیمانده $r \in \{0, 1, \dots, m-1\}$ یکتا است و $r_1 + r_2 \equiv r \pmod{m}$. لذا $\bar{r} = \overline{r_1 + r_2} \in \mathbb{Z}_m$ و حاصل منحصر به فرد است.
+> 2. **خوش‌تعریفی (استقلال از نماینده):** فرض کنیم $\bar{r}_1 = \bar{r}'_1$ و $\bar{r}_2 = \bar{r}'_2$. طبق تعریف رده هم‌نهشتی:
+>
+> $$m \mid (r_1 - r'_1) \quad \text{و} \quad m \mid (r_2 - r'_2)$$
+>
+> پس اعداد صحیح $k_1, k_2 \in \mathbb{Z}$ وجود دارند که $r_1 - r'_1 = k_1 m$ و $r_2 - r'_2 = k_2 m$. با جمع این دو تساوی داریم:
+>
+> $$(r_1 + r_2) - (r'_1 + r'_2) = (k_1 + k_2)m \implies m \mid \big((r_1 + r_2) - (r'_1 + r'_2)\big)$$
+>
+> بنابراین $r_1 + r_2 \equiv r'_1 + r'_2 \pmod{m}$ و در نتیجه باقیمانده‌های استانداردشان یکسان است و $\overline{r_1 + r_2} = \overline{r'_1 + r'_2}$. پس عمل $+$ خوش‌تعریف است و به ازای هر $a, b \in \mathbb{Z}$ داریم $\bar{a} + \bar{b} = \overline{a + b}$.
+>
+> **گام دوم (خاصیت شرکت‌پذیری):**  
+> به ازای هر سه عضو دلخواه $\bar{a}, \bar{b}, \bar{c} \in \mathbb{Z}_m$، با تکیه بر شرکت‌پذیری جمع در $\mathbb{Z}$ داریم:
+>
+> $$(\bar{a} + \bar{b}) + \bar{c} = \overline{a + b} + \bar{c} = \overline{(a + b) + c} = \overline{a + (b + c)} = \bar{a} + \overline{b + c} = \bar{a} + (\bar{b} + \bar{c})$$
+>
+> پس عمل جمع در $\mathbb{Z}_m$ شرکت‌پذیر است.
+>
+> **گام سوم (وجود عضو همانی جمعی):**  
+> عنصر $\bar{0} \in \mathbb{Z}_m$ عضو همانی جمعی (صفر گروه) است؛ زیرا به ازای هر $\bar{r} \in \mathbb{Z}_m$:
+>
+> $$\bar{r} + \bar{0} = \overline{r + 0} = \bar{r}, \qquad \bar{0} + \bar{r} = \overline{0 + r} = \bar{r}$$
+>
+> **گام چهارم (وجود عضو قرینه):**  
+> به ازای هر $\bar{r} \in \mathbb{Z}_m$ با نماینده استاندارد $r \in \{0, 1, \dots, m-1\}$، دو حالت را بررسی می‌کنیم:
+> * اگر $r = 0$ باشد، قرینه $\bar{0}$ خود $\bar{0} \in \mathbb{Z}_m$ است زیرا $\bar{0} + \bar{0} = \bar{0}$.
+> * اگر $1 \leqslant r \leqslant m - 1$ باشد، آنگاه $1 \leqslant m - r \leqslant m - 1$ است؛ لذا $\overline{m - r} \in \mathbb{Z}_m$ و داریم:
+>
+> $$\bar{r} + \overline{m - r} = \overline{r + (m - r)} = \bar{m} = \bar{0}, \qquad \overline{m - r} + \bar{r} = \overline{(m - r) + r} = \bar{m} = \bar{0}$$
+>
+> (به بیان یکپارچه، برای هر $a \in \mathbb{Z}$، قرینه $\bar{a}$ برابر با $-\bar{a} = \overline{-a}$ است.) پس هر عضو در $\mathbb{Z}_m$ دارای عضو قرینه در $\mathbb{Z}_m$ است.
+>
+> **گام پنجم (خاصیت جابجایی / آبلی بودن):**  
+> به ازای هر $\bar{a}, \bar{b} \in \mathbb{Z}_m$، با بهره‌گیری از خاصیت جابجایی جمع در $\mathbb{Z}$ داریم:
+>
+> $$\bar{a} + \bar{b} = \overline{a + b} = \overline{b + a} = \bar{b} + \bar{a}$$
+>
+> از گام‌های اول تا پنجم نتیجه می‌شود که $(\mathbb{Z}_m, +)$ یک گروه جابجایی (آبلی) از مرتبه $m$ است.
+>
+> $\blacksquare$
 
-* بررسی روش‌های کوتاه‌تر یا تعمیم‌های ممکن مسئله.
+---
 
+### روش دوم: تفسیر به عنوان گروه خارج‌قسمتی $\mathbb{Z} / m\mathbb{Z}$
+
+> [!NOTE] مسیر اثبات جایگزین (ساختار گروه خارج‌قسمتی)
+> می‌دانیم $(\mathbb{Z}, +)$ یک گروه آبلی است و $m\mathbb{Z} = \{ mk \mid k \in \mathbb{Z} \}$ زیرگروه آن است. از آنجا که هر زیرگروه یک گروه آبلی نرمال است، $m\mathbb{Z} \trianglelefteq \mathbb{Z}$.  
+> طبق [[قضیه ساختار گروه خارج‌قسمتی]]، مجموعه هم‌مجموعه‌های چپ:
+>
+> $$\mathbb{Z} / m\mathbb{Z} = \{ r + m\mathbb{Z} \mid 0 \leqslant r < m \}$$
+>
+> تحت عمل القایی $(r_1 + m\mathbb{Z}) + (r_2 + m\mathbb{Z}) = (r_1 + r_2) + m\mathbb{Z}$ یک گروه است. چون $\bar{r} = r + m\mathbb{Z}$ و عمل گروه $\mathbb{Z}$ جابجایی است، گروه خارج‌قسمتی $\mathbb{Z} / m\mathbb{Z} = \mathbb{Z}_m$ نیز یک گروه آبلی (و در واقع دوری با مولد $\bar{1}$) خواهد بود. (در برهان صوری پایه، روش اول بدون نیاز به نظریه زیرگروه‌های نرمال، تمام جزئیات را مستقیماً از اصول موضوعه گروه و هم‌نهشتی اثبات می‌کند.)
+
+---
+
+## ۲. نگاه به عقب، تحلیل دام‌ها و تعمیم ساختاری (Looking Back & Insights)
+
+### الف) هشدار درباره خطاهای رایج ذهنی (Pitfalls)
+* ⚠️ **فراموش کردن اثبات خوش‌تعریفی:** یکی از رایج‌ترین خطاهای امتحانی این است که دانشجو بدون بررسی خوش‌تعریفی، فوراً شرکت‌پذیری و همانی را چک کند. در حالی که اگر به جای جمع پیمانه‌ای، مثلاً عمل $\bar{r}_1 \star \bar{r}_2 = \overline{r_1^{r_2}}$ تعریف می‌شد، اصلاً عمل خوش‌تعریفی به دست نمی‌آمد (زیرا به ازای $m = 5$ داریم $\bar{2} = \bar{7}$، اما $3^2 = 9 \not\equiv 3^7 = 2187 \equiv 2 \pmod 5$).
+* ⚠️ **نوشتن $\overline{m - r}$ برای $r = 0$ بدون یادآوری $\bar{m} = \bar{0}$:** اگر در تعریف قرینه بدون تفکیک بنویسید $-\bar{r} = \overline{m - r}$، به ازای $r = 0$ به $\bar{m}$ می‌رسید که ظاهراً در فهرست $\{\bar{0}, \dots, \overline{m-1}\}$ دیده نمی‌شود؛ لذا تصریح برابری $\bar{m} = \bar{0}$ یا تفکیک $r = 0$ ضروری است.
+* ⚠️ **خطای نمادگذاری در دستگاه جمعی:** هرگز برای عضو همانی این گروه نماد $e$ یا برای قرینه آن نماد $\bar{r}^{-1}$ به کار نبرید؛ نمادهای استاندارد در دستگاه جمعی منحصراً $\bar{0}$ و $-\bar{r}$ هستند.
+
+### ب) تعمیم و پیوندهای ساختاری
+* **ساختار دوری بودن $\mathbb{Z}_m$:** هر عضو $\bar{k} \in \mathbb{Z}_m$ برابر با $k \cdot \bar{1} = \underbrace{\bar{1} + \dots + \bar{1}}_{k \text{ بار}}$ است؛ بنابراین $\mathbb{Z}_m = \langle \bar{1} \rangle$ یک گروه دوری از مرتبه $m$ است و طبق [[قضیه یک‌ریختی گروه‌های دوری هم‌مرتبه]]، هر گروه دوری مرتبه $m$ با $(\mathbb{Z}_m, +)$ یک‌ریخت است.
+* **حالت $m = 1$:** در حالت حدی $m = 1$، داریم $\mathbb{Z}_1 = \{\bar{0}\}$ که گروه بدیهی تک‌عضوی است.
